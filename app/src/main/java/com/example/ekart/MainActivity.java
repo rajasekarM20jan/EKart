@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.profileButton:{
+                        SharedPreferences sp=getSharedPreferences("myPref",MODE_PRIVATE);
+                        sp.getString("","");
                         frag=new ProfileFragment();
                         break;
                     }
