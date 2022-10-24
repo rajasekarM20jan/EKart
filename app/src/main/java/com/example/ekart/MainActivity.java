@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.profileButton:{
                         SharedPreferences sp=getSharedPreferences("myPref",MODE_PRIVATE);
-                        sp.getString("","");
+                        sp.getString("mobile","no");
                         frag=new ProfileFragment();
                         break;
                     }

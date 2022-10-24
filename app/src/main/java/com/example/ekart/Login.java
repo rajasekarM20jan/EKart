@@ -53,7 +53,7 @@ public class Login extends AppCompatActivity {
         etForPassword.setError("Invalid Credentials");
     }
     public void dashboard(){
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.loginLayout,new ProfileFragment()).commit();
     }
     public void gettoDb(){
         db=new DbForUser(Login.this);
