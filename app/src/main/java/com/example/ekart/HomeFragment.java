@@ -227,7 +227,7 @@ public class HomeFragment extends Fragment {
         listButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            getList();
             }
         });
 
@@ -236,6 +236,11 @@ public class HomeFragment extends Fragment {
     void getNextPage(String title){
         Intent i=new Intent(getActivity(),ProductViewer.class);
         i.putExtra("title",title);
+        startActivity(i);
+    }
+    void getList(){
+        Intent i=new Intent(getActivity(),ListActivity.class);
+        i.putExtra("values","all");
         startActivity(i);
     }
 }

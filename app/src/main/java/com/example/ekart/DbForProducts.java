@@ -14,9 +14,9 @@ public class DbForProducts extends SQLiteOpenHelper {
     SQLiteDatabase dbReader,dbWriter;
     ContentValues values;
     Cursor c;
-    String thumbnail;
     int count;
     ArrayList image;
+    String id,title,description,price,discountPercentage,rating,stock,brand,category,thumbnail;;
 
     public DbForProducts(@Nullable Context context) {
         super(context, "productDatabase", null, 1);
@@ -94,6 +94,38 @@ public class DbForProducts extends SQLiteOpenHelper {
         c=dbReader.rawQuery("SELECT thumbnail FROM products WHERE title LIKE ?",new String[]{"%"+title+"%"});
         c.moveToNext();
         thumbnail=c.getString(0);
+
+    }
+    void getData(String product){
+        dbReader =this.getReadableDatabase();
+        c=dbReader.rawQuery("SELECT * FROM products WHERE title LIKE ?",new String[]{"%"+product+"%"});
+        c.moveToNext();
+        id=c.getString(0);
+        title=c.getString(1);
+        description=c.getString(2);
+        price=c.getString(3);
+        discountPercentage=c.getString(4);
+        rating=c.getString(5);
+        stock=c.getString(6);
+        brand=c.getString(7);
+        category=c.getString(8);
+        thumbnail=c.getString(9);
+
+    }
+    void getList(String id){
+        dbReader=this.getReadableDatabase();
+        c=dbReader.rawQuery("SELECT * FROM products WHERE id=?",new String[]{id});
+        c.moveToNext();
+        this.id=c.getString(0);
+        title=c.getString(1);
+        description=c.getString(2);
+        price=c.getString(3);
+        discountPercentage=c.getString(4);
+        rating=c.getString(5);
+        stock=c.getString(6);
+        brand=c.getString(7);
+        category=c.getString(8);
+        thumbnail=c.getString(9);
 
     }
 }
