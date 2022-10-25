@@ -60,6 +60,7 @@ public class UserProfile extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        Intent a=new Intent(UserProfile.this,MainActivity.class);
+        startActivity(a);
     }
 }

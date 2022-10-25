@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/list"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cartThumbnail"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:paddingBottom="20dp" />
+
+    <TextView
+        android:id="@+id/cartProductName"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/cartThumbnail"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="-10dp"
+        android:layout_toEndOf="@+id/cartThumbnail"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/cartPrice"
+        android:layout_width="78dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/cartProductName"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/cartThumbnail"
+        android:gravity="end"
+        android:textSize="14sp" />
+
+</RelativeLayout>

@@ -1,10 +1,15 @@
 package com.example.ekart;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +23,7 @@ public class ProductViewer extends AppCompatActivity {
     String[] url;
     Object[] url1;
     DbForProducts db;
+    Button addToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,7 @@ public class ProductViewer extends AppCompatActivity {
         productRating=findViewById(R.id.productRating);
         productBrand=findViewById(R.id.productBrand);
         productCategory=findViewById(R.id.productCategory);
+        addToCart=findViewById(R.id.cartButton);
         Intent intent=getIntent();
         String title=intent.getStringExtra("title");
         System.out.println("My Data: "+title);
@@ -57,5 +64,27 @@ public class ProductViewer extends AppCompatActivity {
         ViewPagerAdapter vpAdapter=new ViewPagerAdapter(this,url);
         productImage.setAdapter(vpAdapter);
 
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
+                String mobile=sp.getString("mobile","no");
+                String cart=productName.getText().toString();
+                System.out.println("My Kart: "+mobile+"\t"+cart);
+                DbForUser dbClass=new DbForUser(ProductViewer.this);
+                dbClass.insertCart(mobile,cart);
+                AlertDialog.Builder alert=new AlertDialog.Builder(ProductViewer.this);
+                alert.setTitle("Added To Cart");
+                alert.setMessage(cart+"\t is added to cart");
+                alert.setCancelable(false);
+                alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                alert.show();
+            }
+        });
     }
 }

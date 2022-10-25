@@ -43,4 +43,21 @@
     <string name="brand">Brand :</string>
     <string name="category">Category :</string>
     <string name="add_to_cart">ADD TO CART</string>
+    <string name="delete">DELETE</string>
+    <string name="proceed_to_buy">PROCEED TO BUY</string>
+    <string name="my_cart">My Cart</string>
+    <string name="item_delete_text">click on item to delete it from cart...</string>
+    <string name="enter_address">Enter Your Address for Delivery Purpose</string>
+    <string name="door_flat_no">Door/Flat No.</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="land_mark">Land Mark</string>
+    <string name="your_pin_code">your PIN Code..</string>
+    <string name="your_state">your state..</string>
+    <string name="your_city">your city..</string>
+    <string name="your_door_no">your door no..</string>
+    <string name="your_street">your street..</string>
+    <string name="your_near_by_landmark">your near by LandMark..</string>
 </resources>

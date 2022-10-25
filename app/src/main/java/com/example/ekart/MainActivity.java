@@ -56,11 +56,14 @@ public class MainActivity extends AppCompatActivity {
                         if(login.equals("true")){
                             Intent i=new Intent(MainActivity.this,UserProfile.class);
                             startActivity(i);
+
                         }
                         else{
                             Intent i=new Intent(MainActivity.this,Login.class);
                             startActivity(i);
+
                         }
+                        break;
 
                     }
                     case R.id.categories:{
@@ -68,11 +71,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.cartButton:{
-                        frag=new CartFragment();
+                        Intent i=new Intent(MainActivity.this,Cart.class);
+                        startActivity(i);
                         break;
                     }
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout,frag).commit();
+                try{
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout,frag).commit();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
 
                 return true;
             }

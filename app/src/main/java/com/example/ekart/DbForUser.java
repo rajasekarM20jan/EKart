@@ -8,12 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class DbForUser extends SQLiteOpenHelper {
     String name,userName,email,password,mobileNumber,login;
     SQLiteDatabase dbReader,dbWriter;
     ContentValues values;
     Cursor c;
     String userFound;
+    ArrayList cart;
 
     public DbForUser(@Nullable Context context) {
         super(context, "UserDatabase", null, 1);
@@ -93,6 +96,26 @@ public class DbForUser extends SQLiteOpenHelper {
         }catch (Exception e){
             System.out.println("ERROR AT UPDATE");
         }
+    }
+    public void insertCart(String mobileNumber,String cart){
+        dbWriter=this.getWritableDatabase();
+        values=new ContentValues();
+        values.put("mobileNumber",mobileNumber);
+        values.put("cart",cart);
+        dbWriter.insert("userCart",null,values);
+    }
+    public void getCart(String mobileNumber){
+        dbReader=this.getReadableDatabase();
+        c = dbReader.rawQuery("SELECT * FROM userCart WHERE mobileNumber=? ", new String[]{mobileNumber});
+        cart=new ArrayList<>();
+        while (c.moveToNext()){
+            String a=c.getString(1);
+            cart.add(a);
+        }
+    }
+    public void deleteFromCart(String mobile,String cart){
+        dbWriter=this.getWritableDatabase();
+        dbWriter.delete("userCart","mobileNumber=? AND cart=?",new String[]{mobile,cart});
     }
 
 }

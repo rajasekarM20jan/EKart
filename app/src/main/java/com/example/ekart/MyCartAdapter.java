@@ -3,7 +3,6 @@ package com.example.ekart;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,27 +10,28 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.example.ekart.R;
-import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
+import model.CartModel;
 import model.ProductModel;
 
-public class MyCustomAdapter extends ArrayAdapter<ProductModel> {
+public class MyCartAdapter extends ArrayAdapter<CartModel> {
     Context context;
     int resource;
-    List<ProductModel> storeProducts;
-    public MyCustomAdapter(Context context, int resource, List<ProductModel> storeProducts){
-        super(context,resource,storeProducts);
+    List<CartModel> myArray;
+
+
+    public MyCartAdapter(@NonNull Context context, int resource, @NonNull List<CartModel> myArray) {
+        super(context, resource, myArray);
         this.context=context;
         this.resource=resource;
-        this.storeProducts=storeProducts;
+        this.myArray=myArray;
     }
 
     @NonNull
@@ -40,11 +40,12 @@ public class MyCustomAdapter extends ArrayAdapter<ProductModel> {
         LayoutInflater inflator=LayoutInflater.from(context);
         View  view=inflator.inflate(resource,null);
 
-        ImageView thumbnail=view.findViewById(R.id.thumbnail);
-        TextView productName=view.findViewById(R.id.productName);
-        TextView price=view.findViewById(R.id.price);
+        ImageView thumbnail=view.findViewById(R.id.cartThumbnail);
+        TextView productName=view.findViewById(R.id.cartProductName);
+        TextView price=view.findViewById(R.id.cartPrice);
 
-        ProductModel product=storeProducts.get(position);
+
+        CartModel product=myArray.get(position);
         System.out.println(product.getTitle());
         System.out.println(product.getPrice());
         System.out.println(product.getThumbnail());
@@ -68,5 +69,6 @@ public class MyCustomAdapter extends ArrayAdapter<ProductModel> {
 
         myThread.start();
         return view;
+
     }
 }
