@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cherry_cream_soda"
-        android:text="E-KART"
+        android:text="@string/main_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintEnd_toEndOf="@id/view"
@@ -35,7 +35,7 @@
         android:layout_width="347dp"
         android:layout_height="144dp"
         android:layout_margin="10dp"
-        android:src="@drawable/diwali_banner"
+        android:src="@drawable/festivalsale"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -60,7 +60,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cherry_cream_soda"
-                android:text="Recommended For You..."
+                android:text="@string/recommended_for_you"
                 android:textStyle="bold"
                 />
 
@@ -96,7 +96,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="IPHONE X" />
+                            android:text="@string/iphone_x" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -116,7 +116,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="MacBook Pro" />
+                            android:text="@string/macbook_pro" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -136,7 +136,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="Huawei \nP30" />
+                            android:text="@string/huawei_p30" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -156,7 +156,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="Surface \n Book" />
+                            android:text="@string/surface_book" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -176,7 +176,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="OPPO F19" />
+                            android:text="@string/oppo_f19" />
                     </LinearLayout>
 
 
@@ -190,7 +190,7 @@
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:gravity="center"
-                android:text="OUR PRODUCTS"
+                android:text="@string/our_products"
                 android:textSize="15sp" />
 
             <HorizontalScrollView
@@ -224,7 +224,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="IPHONE 9" />
+                            android:text="@string/iphone_9" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -244,7 +244,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="Brown \nPerfume" />
+                            android:text="@string/brown_perfume" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -264,7 +264,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="Tree Oil" />
+                            android:text="@string/tree_oil" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -284,7 +284,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/cherry_cream_soda"
                             android:gravity="center"
-                            android:text="KeyHolder" />
+                            android:text="@string/keyholder" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -297,9 +297,10 @@
                             android:layout_width="80dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"
-                            android:background="@drawable/addtocartbtn"
+                            android:background="@drawable/viewall"
+                            android:drawableRight="@drawable/arrow"
                             android:gravity="center"
-                            android:text="View all" />
+                            android:text="@string/view_all" />
 
                     </LinearLayout>
 

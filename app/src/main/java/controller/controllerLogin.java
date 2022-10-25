@@ -1,12 +1,14 @@
-package com.example.ekart;
+package controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.ekart.Login;
+
 public class controllerLogin {
     Login userVerification;
-    public controllerLogin(Login mainActivity){
-        this.userVerification=mainActivity;
+    public controllerLogin(Login login){
+        this.userVerification=login;
     }
     public void verifyData(String userMobile,String password,String editTextMail,String editTextPass){
         if(editTextMail.equals(userMobile)){

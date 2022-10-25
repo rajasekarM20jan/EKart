@@ -3,11 +3,14 @@ package com.example.ekart;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import controller.controllerLogin;
 
 public class Login extends AppCompatActivity {
     EditText etForMail,etForPassword;
@@ -53,7 +56,13 @@ public class Login extends AppCompatActivity {
         etForPassword.setError("Invalid Credentials");
     }
     public void dashboard(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.loginLayout,new ProfileFragment()).commit();
+        SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
+        String mobile=sp.getString("mobile","no");
+        System.out.println("ERROR AT MOBILE: "+mobile);
+        db=new DbForUser(Login.this);
+        db.updateData(sp.getString("mobile","no"),"true");
+        Intent i=new Intent(Login.this,UserProfile.class);
+        startActivity(i);
     }
     public void gettoDb(){
         db=new DbForUser(Login.this);
@@ -65,7 +74,9 @@ public class Login extends AppCompatActivity {
         if(user.equals("true")){
             String userMobile=db.mobileNumber;
             String password=db.password;
+            System.out.println("ERROR AT CL");
             controllerLogin c=new controllerLogin(Login.this);
+            System.out.println("ERROR AT CLV");
             c.verifyData(userMobile,password,etForMail.getText().toString(),etForPassword.getText().toString());
         }else{
             etForMail.setError("Invalid Credentials");

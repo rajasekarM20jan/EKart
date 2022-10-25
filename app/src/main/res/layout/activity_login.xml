@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"
-        android:text="E-Kart"
+        android:text="@string/main_text"
         android:textSize="20sp"
         android:gravity="center"
         android:fontFamily="@font/cherry_cream_soda"
@@ -37,7 +37,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="250dp"
-            android:text="Enter Credentials For Login"
+            android:text="@string/enter_credentials"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAlignment="center"
@@ -50,7 +50,7 @@
             android:textSize="12sp"
             android:textStyle="bold"
             android:background="@drawable/linearbg"
-            android:hint="enter your Mobile Number"
+            android:hint="@string/enter_your_mobile_number"
             android:layout_marginTop="50dp"
             android:ems="10"
             android:layout_gravity="center"
@@ -63,7 +63,7 @@
             android:layout_height="30dp"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:hint="enter Your Password"
+            android:hint="@string/enter_your_password"
             android:background="@drawable/linearbg"
             android:layout_marginTop="50dp"
             android:ems="10"
@@ -74,7 +74,7 @@
 
         <android.widget.Button
             android:id="@+id/loginButton"
-            android:text="login"
+            android:text="@string/login"
             android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -91,7 +91,7 @@
             android:textStyle="italic"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:text="New User SignUp Here.."
+            android:text="@string/new_user_signup"
             android:layout_height="25dp"
             android:layout_margin="20dp"/>
 

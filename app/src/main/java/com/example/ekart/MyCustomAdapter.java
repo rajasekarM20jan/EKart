@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.ekart.R;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;

@@ -19,6 +19,7 @@ public class ListActivity extends AppCompatActivity {
     ArrayList<ProductModel> productList;
     ListView myList;
     SearchView mySearch;
+    ArrayList<ProductModel> myFilter;
     DbForProducts db;
     String values="all";
     @Override
@@ -52,7 +53,7 @@ public class ListActivity extends AppCompatActivity {
             category=db.category;
             productList.add(new ProductModel(title,description,price,thumbnail,category,brand));
         }
-        ArrayList<ProductModel> myFilter=new ArrayList<ProductModel>();
+        myFilter=new ArrayList<ProductModel>();
         for (ProductModel myFilters: productList) {
             if (values.equals("all")){
                 myFilter.add(myFilters);
@@ -72,5 +73,34 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        mySearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                ArrayList<ProductModel> mySearch = new ArrayList<ProductModel>();
+                for (ProductModel item : myFilter) {
+                    if (item.getTitle().toLowerCase().contains(s.toLowerCase())) {
+                        mySearch.add(item);
+                    }
+                }
+                MyCustomAdapter listAdapter = new MyCustomAdapter(ListActivity.this, R.layout.my_custom_layout, mySearch);
+                myList.setAdapter(listAdapter);
+                myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent i = new Intent(ListActivity.this, ProductViewer.class);
+                        i.putExtra("title", mySearch.get(position).getTitle());
+                        startActivity(i);
+                    }
+                });
+            return false;
+            }
+        });
     }
+
 }

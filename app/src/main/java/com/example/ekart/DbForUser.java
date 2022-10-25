@@ -45,7 +45,7 @@ public class DbForUser extends SQLiteOpenHelper {
     public void verify(String userAccess,String pass){
         dbReader=this.getReadableDatabase();
         try{
-            c= dbReader.rawQuery("SELECT * FROM UserAccounts WHERE mobileNumber=? ",new String[]{userAccess});
+            c= dbReader.rawQuery("SELECT * FROM UserAccounts WHERE mobileNumber=?",new String[]{userAccess});
             c.moveToNext();
             name=c.getString(0);
             userName=c.getString(1);
@@ -60,16 +60,39 @@ public class DbForUser extends SQLiteOpenHelper {
         }
     }
     public void getData(String mobile) {
-        dbReader = this.getReadableDatabase();
-        c = dbReader.rawQuery("SELECT * FROM userAccounts WHERE mobileNumber=? ", new String[]{mobile});
-        c.moveToNext();
-        name = c.getString(0);
-        userName = c.getString(1);
-        email = c.getString(2);
-        password = c.getString(3);
-        mobileNumber = c.getString(4);
-        login = c.getString(5);
-        c.close();
+        try{
+            dbReader = this.getReadableDatabase();
+            c = dbReader.rawQuery("SELECT * FROM userAccounts WHERE mobileNumber=? ", new String[]{mobile});
+            c.moveToNext();
+            name = c.getString(0);
+            userName = c.getString(1);
+            email = c.getString(2);
+            password = c.getString(3);
+            mobileNumber = c.getString(4);
+            login = c.getString(5);
+            c.close();
+
+
+        }catch(Exception e){
+            login="false";
+        }
+
+    }
+    public void updateData(String mobile,String loginStatus){
+        try{
+            getData(mobile);
+            dbWriter=this.getWritableDatabase();
+            values=new ContentValues();
+            values.put("name",name);
+            values.put("userName",userName);
+            values.put("email",email);
+            values.put("password",password);
+            values.put("mobileNumber",mobileNumber);
+            values.put("login",loginStatus);
+            dbWriter.update("userAccounts",values,"mobileNumber=?",new String[]{mobile});
+        }catch (Exception e){
+            System.out.println("ERROR AT UPDATE");
+        }
     }
 
 }

@@ -76,7 +76,6 @@ public class DbForProducts extends SQLiteOpenHelper {
         dbReader =this.getReadableDatabase();
         c=dbReader.rawQuery("SELECT * FROM productImages WHERE title LIKE ?",new String[]{"%"+title+"%"});
         int a=c.getCount();
-        ArrayList title2=new ArrayList<>();
         ArrayList img=new ArrayList<>();
         String title1=null;
         for(int j=0;j<a;j++){
@@ -84,9 +83,8 @@ public class DbForProducts extends SQLiteOpenHelper {
             title1=c.getString(0);
             img.add(c.getString(1));
         }
-        title2.add(title1);
-        title2.add(img);
-        image.add(title2);
+        image.add(title1);
+        image.add(img);
     }
 
     void getThumbnail(String title){
