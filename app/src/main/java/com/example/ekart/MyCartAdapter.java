@@ -25,6 +25,8 @@ public class MyCartAdapter extends ArrayAdapter<CartModel> {
     Context context;
     int resource;
     List<CartModel> myArray;
+    CartModel product;
+    ImageView thumbnail;
 
 
     public MyCartAdapter(@NonNull Context context, int resource, @NonNull List<CartModel> myArray) {
@@ -40,12 +42,12 @@ public class MyCartAdapter extends ArrayAdapter<CartModel> {
         LayoutInflater inflator=LayoutInflater.from(context);
         View  view=inflator.inflate(resource,null);
 
-        ImageView thumbnail=view.findViewById(R.id.cartThumbnail);
+        thumbnail=view.findViewById(R.id.cartThumbnail);
         TextView productName=view.findViewById(R.id.cartProductName);
         TextView price=view.findViewById(R.id.cartPrice);
 
 
-        CartModel product=myArray.get(position);
+        product=myArray.get(position);
         System.out.println(product.getTitle());
         System.out.println(product.getPrice());
         System.out.println(product.getThumbnail());

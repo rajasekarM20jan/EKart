@@ -1,11 +1,14 @@
 package com.example.ekart;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,6 +22,7 @@ public class UserProfile extends AppCompatActivity {
     FloatingActionButton home;
     ArrayList<Profile> userData;
     DbForUser db;
+    Button LogoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class UserProfile extends AppCompatActivity {
         password=findViewById(R.id.password);
         loginStatus=findViewById(R.id.loginStatus);
         home =findViewById(R.id.filterPage);
+        LogoutButton=findViewById(R.id.logoutButton);
         userData=new ArrayList<Profile>();
         db=new DbForUser(UserProfile.this);
         SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
@@ -54,6 +59,34 @@ public class UserProfile extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(UserProfile.this,MainActivity.class);
                 startActivity(i);
+            }
+        });
+
+        LogoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert=new AlertDialog.Builder(UserProfile.this);
+                alert.setMessage("Are You Sure about Signing Out?");
+                alert.setCancelable(false);
+                alert.setNegativeButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
+                        String mobile=sp.getString("mobile","no");
+                        DbForUser db=new DbForUser(UserProfile.this);
+                        db.updateData(mobile,"false");
+                        Intent ai=new Intent(UserProfile.this,MainActivity.class);
+                        startActivity(ai);
+                        dialogInterface.cancel();
+                    }
+                });
+                alert.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                alert.show();
             }
         });
     }

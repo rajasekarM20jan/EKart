@@ -27,6 +27,7 @@ public class DbForUser extends SQLiteOpenHelper {
         myDb.execSQL("CREATE TABLE userAccounts (name text,userName text,email text,password text,mobileNumber text,login text)");
         myDb.execSQL("CREATE TABLE userCart(mobileNumber text,cart text)");
         myDb.execSQL("CREATE TABLE userAddress(mobileNumber text,address text)");
+        myDb.execSQL("CREATE TABLE userOrders(mobileNumber text,orders text,orderDate text)");
     }
 
     @Override
@@ -118,4 +119,7 @@ public class DbForUser extends SQLiteOpenHelper {
         dbWriter.delete("userCart","mobileNumber=? AND cart=?",new String[]{mobile,cart});
     }
 
+    public void insertOrders(String mobileNumber,String order,String orderDate){
+
+    }
 }

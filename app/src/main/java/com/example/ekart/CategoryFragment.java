@@ -79,4 +79,6 @@ public class CategoryFragment extends Fragment {
         i.putExtra("values",value);
         startActivity(i);
     }
+
+
 }

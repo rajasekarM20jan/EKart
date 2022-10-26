@@ -58,6 +58,26 @@ public class Cart extends AppCompatActivity {
             }
         });
 
+        proceedToBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(cartList.getAdapter().isEmpty()){
+                    AlertDialog.Builder alert=new AlertDialog.Builder(Cart.this);
+                    alert.setMessage(getString(R.string.empty_cart_alert));
+                    alert.setCancelable(false);
+                    alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    alert.show();
+                }else{
+                    getBuyPage();
+                }
+            }
+        });
+
 
     }
 
@@ -71,7 +91,7 @@ public class Cart extends AppCompatActivity {
         SharedPreferences sp1=getSharedPreferences("MyPref",MODE_PRIVATE);
         String mobileNumber=sp1.getString("mobile","no");
         AlertDialog.Builder alert=new AlertDialog.Builder(Cart.this);
-        alert.setMessage("Are You sure to remove "+product+" from the cart");
+        alert.setMessage(getString(R.string.cart_remove1)+product+getString(R.string.cart_remove2));
         alert.setCancelable(false);
         alert.setPositiveButton("NO", new DialogInterface.OnClickListener() {
             @Override
@@ -91,5 +111,29 @@ public class Cart extends AppCompatActivity {
             }
         });
         alert.show();
+    }
+    void getBuyPage(){
+        SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
+        String mobile=sp.getString("mobile","no");
+        DbForUser dbForUser=new DbForUser(Cart.this);
+        dbForUser.getData(mobile);
+        String login=dbForUser.login;
+        System.out.println("My Login: "+login);
+        if(login.equals("true")){
+            Intent ai=new Intent(Cart.this,BuyingPage.class);
+            ai.putExtra("products",cartData);
+            startActivity(ai);
+        }else{
+            AlertDialog.Builder alert=new AlertDialog.Builder(Cart.this);
+            alert.setMessage(getString(R.string.login_alert_cart));
+            alert.setCancelable(false);
+            alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+            alert.show();
+        }
     }
 }

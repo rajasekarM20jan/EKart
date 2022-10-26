@@ -69,21 +69,42 @@ public class ProductViewer extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
                 String mobile=sp.getString("mobile","no");
-                String cart=productName.getText().toString();
-                System.out.println("My Kart: "+mobile+"\t"+cart);
-                DbForUser dbClass=new DbForUser(ProductViewer.this);
-                dbClass.insertCart(mobile,cart);
-                AlertDialog.Builder alert=new AlertDialog.Builder(ProductViewer.this);
-                alert.setTitle("Added To Cart");
-                alert.setMessage(cart+"\t is added to cart");
-                alert.setCancelable(false);
-                alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                alert.show();
+                DbForUser dbForUser=new DbForUser(ProductViewer.this);
+                dbForUser.getData(mobile);
+                String login=dbForUser.login;
+                System.out.println("My Login: "+login);
+                if(login.equals("true")){
+                    SharedPreferences sp1=getSharedPreferences("MyPref",MODE_PRIVATE);
+                    String mobile1=sp1.getString("mobile","no");
+                    String cart=productName.getText().toString();
+                    System.out.println("My Kart: "+mobile1+"\t"+cart);
+                    DbForUser dbClass=new DbForUser(ProductViewer.this);
+                    dbClass.insertCart(mobile,cart);
+                    AlertDialog.Builder alert=new AlertDialog.Builder(ProductViewer.this);
+                    alert.setTitle("Added To Cart");
+                    alert.setMessage(cart+"\t is added to cart");
+                    alert.setCancelable(false);
+                    alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    alert.show();
+                }else{
+                    AlertDialog.Builder alert=new AlertDialog.Builder(ProductViewer.this);
+                    alert.setMessage(getString(R.string.login_alert_pv));
+                    alert.setCancelable(false);
+                    alert.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    alert.show();
+                }
+
+
             }
         });
     }

@@ -60,4 +60,20 @@
     <string name="your_door_no">your door no..</string>
     <string name="your_street">your street..</string>
     <string name="your_near_by_landmark">your near by LandMark..</string>
+    <string name="landmark_alert">Please give us some Landmark so we could reach you at ease...</string>
+    <string name="pin_alert">Please enter the valid Postal Code</string>
+    <string name="state_alert">Please fill in the field State</string>
+    <string name="city_alert">Please fill in the field City</string>
+    <string name="street_alert">Please fill in the field Street</string>
+    <string name="door_alert">Please fill in the field Door/Flat No</string>
+    <string name="empty_cart_alert">Please add Some Products in the cart before you click on Buy</string>
+    <string name="cart_remove1">\"Are You sure to remove \"</string>
+    <string name="cart_remove2">\" from the cart\"</string>
+    <string name="login_alert_pv">Please Login Before Adding to Cart</string>
+    <string name="login_alert_cart">Login Before You Proceed to Buy</string>
+    <string name="confirm_purchase">Confirm Purchase</string>
+    <string name="cancel">CANCEL</string>
+    <string name="as_of_now_we_are_providing_only_cash_on_delivery">*As Of Now We Are providing Only Cash On Delivery</string>
+    <string name="your_products_are">Your Products are :</string>
+    <string name="address_of_delivery">Address Of Delivery:\n</string>
 </resources>
