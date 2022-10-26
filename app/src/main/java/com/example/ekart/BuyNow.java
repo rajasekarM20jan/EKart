@@ -17,6 +17,7 @@ public class BuyNow extends AppCompatActivity {
     ArrayList products;
     String address;
     String order;
+    String product;
     TextView productText,productPrice,total,addressOfUser;
     Button confirmPurchase,cancel;
     @Override
@@ -57,6 +58,7 @@ public class BuyNow extends AppCompatActivity {
                 String OrderDate= sd.format(d);
                 SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
                 String mobile=sp.getString("mobile","no");
+                System.out.println("MY PRODUCTS: "+product);
                 DbForUser db=new DbForUser(BuyNow.this);
                 db.deleteCart();
                 db.insertOrders(mobile, String.valueOf(products),OrderDate);

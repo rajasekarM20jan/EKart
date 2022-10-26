@@ -121,7 +121,7 @@ public class DbForUser extends SQLiteOpenHelper {
 
     public void deleteCart(){
         dbWriter=this.getWritableDatabase();
-        dbWriter.rawQuery("DELETE FROM userCart",null);
+        dbWriter.delete("userCart",null,null);
     }
     public void insertOrders(String mobileNumber,String orders,String orderDate){
         try {
@@ -141,8 +141,11 @@ public class DbForUser extends SQLiteOpenHelper {
         orderHistory=new ArrayList<>();
         c=dbReader.rawQuery("SELECT * FROM userOrders WHERE mobileNumber=?",new String[]{mobileNumber});
         while (c.moveToNext()){
-            orderHistory.add(c.getString(1));
-            orderHistory.add(c.getString(2));
+            ArrayList myArray=new ArrayList<>();
+            myArray.add(c.getString(1));
+            myArray.add(c.getString(2));
+
+            orderHistory.add(myArray);
         }
     }
 }

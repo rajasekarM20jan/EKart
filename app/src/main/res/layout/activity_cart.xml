@@ -25,16 +25,19 @@
         app:layout_constraintBottom_toBottomOf="@id/view4"
         app:layout_constraintStart_toStartOf="@id/view4"
         app:layout_constraintEnd_toEndOf="@id/view4"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/item_delete_text"
-        android:fontFamily="@font/cherry_cream_soda"
         android:layout_margin="5dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:text="@string/item_delete_text"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/view4" />
+
     <android.widget.Button
         android:id="@+id/proceedToBuy"
         android:layout_width="200dp"

@@ -7,9 +7,11 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import model.OrderModel;
+
 public class OrderHistory extends AppCompatActivity {
     ArrayList orderData;
-    String[] products;
+    ArrayList<OrderModel> orders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,17 @@ public class OrderHistory extends AppCompatActivity {
         db.getOrders(mobile);
         orderData=db.orderHistory;
         System.out.println("ORDER HISTORY: "+orderData);
+        orders=new ArrayList<OrderModel>();
+        for(int i=0;i<orderData.size();i++){
+            ArrayList order=(ArrayList) orderData.get(i);
+            String orderDate=order.get(1).toString();
+            String product=(String) order.get(0);
+            System.out.println("Order Date: "+orderDate);
+            System.out.println("Order Date: "+product);
+
+        }
+
+
 
     }
 }

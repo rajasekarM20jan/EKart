@@ -60,7 +60,7 @@ public class ProductViewer extends AppCompatActivity {
         for(int i=0;i<url1.length;i++){
             url[i]=(String) url1[i];
         }
-        System.out.println("My Images2:"+url[0]);
+        System.out.println("My Images2:"+image.size());
         ViewPagerAdapter vpAdapter=new ViewPagerAdapter(this,url);
         productImage.setAdapter(vpAdapter);
 

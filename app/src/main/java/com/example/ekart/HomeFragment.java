@@ -68,13 +68,14 @@ public class HomeFragment extends Fragment {
         myClient.newCall(fetchData).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-
+                System.out.println("My Images Failed");
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 String resultData=response.body().string();
                 try{
+
                     JSONObject ab=new JSONObject(resultData);
                     JSONArray imgs=ab.getJSONArray("products");
                     db=new DbForProducts(getActivity());
@@ -93,7 +94,7 @@ public class HomeFragment extends Fragment {
 
                     }
                 }catch (Exception e){
-
+                    System.out.println("My Images Failed catch");
                 }
 
             }
