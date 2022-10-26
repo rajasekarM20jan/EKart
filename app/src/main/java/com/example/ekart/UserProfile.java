@@ -22,7 +22,7 @@ public class UserProfile extends AppCompatActivity {
     FloatingActionButton home;
     ArrayList<Profile> userData;
     DbForUser db;
-    Button LogoutButton;
+    Button LogoutButton,orderHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class UserProfile extends AppCompatActivity {
         loginStatus=findViewById(R.id.loginStatus);
         home =findViewById(R.id.filterPage);
         LogoutButton=findViewById(R.id.logoutButton);
+        orderHistory=findViewById(R.id.orderHistory);
         userData=new ArrayList<Profile>();
         db=new DbForUser(UserProfile.this);
         SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
@@ -59,6 +60,14 @@ public class UserProfile extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(UserProfile.this,MainActivity.class);
                 startActivity(i);
+            }
+        });
+
+        orderHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent oh=new Intent(UserProfile.this,OrderHistory.class);
+                startActivity(oh);
             }
         });
 

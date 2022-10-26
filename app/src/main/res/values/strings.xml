@@ -76,4 +76,7 @@
     <string name="as_of_now_we_are_providing_only_cash_on_delivery">*As Of Now We Are providing Only Cash On Delivery</string>
     <string name="your_products_are">Your Products are :</string>
     <string name="address_of_delivery">Address Of Delivery:\n</string>
+    <string name="order_success">YOUR ORDER HAS BEEN PLACED SUCCESSFULLY</string>
+    <string name="thank_you_txt">You Can View Your Order Details under User Profile</string>
+    <string name="order_history">ORDER HISTORY</string>
 </resources>

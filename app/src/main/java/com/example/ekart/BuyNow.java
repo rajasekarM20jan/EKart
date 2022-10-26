@@ -16,6 +16,7 @@ import java.util.Date;
 public class BuyNow extends AppCompatActivity {
     ArrayList products;
     String address;
+    String order;
     TextView productText,productPrice,total,addressOfUser;
     Button confirmPurchase,cancel;
     @Override
@@ -47,15 +48,20 @@ public class BuyNow extends AppCompatActivity {
         }
         total.setText("Total :\t\t"+totalAmount);
 
+
         confirmPurchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SimpleDateFormat sd=new SimpleDateFormat("dd/MM/y @ hh:mm:ss");
+                SimpleDateFormat sd=new SimpleDateFormat("dd/MM/y  hh:mm:ss");
                 Date d=new Date();
                 String OrderDate= sd.format(d);
                 SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
                 String mobile=sp.getString("mobile","no");
-
+                DbForUser db=new DbForUser(BuyNow.this);
+                db.deleteCart();
+                db.insertOrders(mobile, String.valueOf(products),OrderDate);
+                Intent i=new Intent(BuyNow.this,ThankYouPage.class);
+                startActivity(i);
             }
         });
 

@@ -16,7 +16,7 @@ public class DbForUser extends SQLiteOpenHelper {
     ContentValues values;
     Cursor c;
     String userFound;
-    ArrayList cart;
+    ArrayList cart,orderHistory;
 
     public DbForUser(@Nullable Context context) {
         super(context, "UserDatabase", null, 1);
@@ -119,7 +119,30 @@ public class DbForUser extends SQLiteOpenHelper {
         dbWriter.delete("userCart","mobileNumber=? AND cart=?",new String[]{mobile,cart});
     }
 
-    public void insertOrders(String mobileNumber,String order,String orderDate){
+    public void deleteCart(){
+        dbWriter=this.getWritableDatabase();
+        dbWriter.rawQuery("DELETE FROM userCart",null);
+    }
+    public void insertOrders(String mobileNumber,String orders,String orderDate){
+        try {
+            dbWriter = this.getWritableDatabase();
+            values = new ContentValues();
+            values.put("mobileNumber", mobileNumber);
+            values.put("orders", orders);
+            values.put("orderDate", orderDate);
+            dbWriter.insert("userOrders", null, values);
+        }catch (Exception e){
+            System.out.println("ERROR IN INSERT ORDERS");
+        }
+    }
 
+    public void getOrders(String mobileNumber){
+        dbReader=this.getReadableDatabase();
+        orderHistory=new ArrayList<>();
+        c=dbReader.rawQuery("SELECT * FROM userOrders WHERE mobileNumber=?",new String[]{mobileNumber});
+        while (c.moveToNext()){
+            orderHistory.add(c.getString(1));
+            orderHistory.add(c.getString(2));
+        }
     }
 }

@@ -15,6 +15,13 @@
         android:theme="@style/Theme.EKart"
         tools:targetApi="31">
         <activity
+            android:name=".OrderHistory"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ThankYouPage"
             android:exported="false">
             <meta-data
