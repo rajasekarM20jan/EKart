@@ -21,11 +21,11 @@
 
     <TextView
         android:id="@+id/productName"
-        android:layout_width="179dp"
-        android:layout_height="59dp"
+        android:layout_width="@dimen/hundred_and_eighty"
+        android:layout_height="@dimen/sixty"
         android:layout_alignTop="@+id/thumbnail"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="@dimen/twenty"
+        android:layout_marginTop="@dimen/six"
         android:layout_toEndOf="@+id/thumbnail"
         android:gravity="center"
         android:textAlignment="center"
@@ -33,11 +33,11 @@
 
     <TextView
         android:id="@+id/price"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/hundred_and_thirty"
+        android:layout_height="@dimen/thirty"
         android:layout_below="@+id/productName"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginStart="@dimen/fifty"
+        android:layout_marginTop="@dimen/seven"
         android:layout_toEndOf="@+id/thumbnail"
         android:textSize="14sp" />
 </RelativeLayout>

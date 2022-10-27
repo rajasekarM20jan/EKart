@@ -16,8 +16,8 @@
         android:id="@+id/backInPV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/four"
+        android:layout_marginStart="@dimen/twenty"
         android:backgroundTint="@color/topbar"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="@dimen/six_hundred"
         android:isScrollContainer="true"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/view2"
@@ -57,25 +57,25 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="@dimen/two_hundred_and_fifty"
                     android:background="@drawable/productview"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"/>
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/productImage"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="30dp" />
+                    android:layout_height="@dimen/two_hundred"
+                    android:layout_marginStart="@dimen/thirty"
+                    android:layout_marginTop="@dimen/thirty"
+                    android:layout_marginEnd="@dimen/thirty"
+                    android:layout_marginBottom="@dimen/thirty" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/productName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="@dimen/thirty"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:gravity="start"
                 android:textSize="28sp" />
@@ -84,7 +84,7 @@
                 android:id="@+id/productPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="@dimen/thirty"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:gravity="start"
                 android:textSize="35sp" />
@@ -92,7 +92,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="@dimen/thirty"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:text="@string/description"
                 android:textSize="25sp" />
@@ -101,8 +101,8 @@
                 android:id="@+id/productDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/thirty"
+                android:layout_marginEnd="@dimen/twenty"
                 android:gravity="start"
                 android:textSize="18sp"
                 android:textStyle="italic" />
@@ -110,13 +110,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="180dp"
+                    android:layout_width="@dimen/hundred_and_eighty"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/twenty"
                     android:fontFamily="@font/cherry_cream_soda"
                     android:text="@string/ratings"
                     android:gravity="center"
@@ -134,13 +134,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="180dp"
+                    android:layout_width="@dimen/hundred_and_eighty"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/twenty"
                     android:gravity="center"
                     android:fontFamily="@font/cherry_cream_soda"
                     android:text="@string/brand"
@@ -158,11 +158,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/twenty"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="180dp"
+                    android:layout_width="@dimen/hundred_and_eighty"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cherry_cream_soda"
                     android:text="@string/category"
@@ -186,7 +186,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/seventy"
         android:background="@color/topbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -194,9 +194,9 @@
 
     <android.widget.Button
         android:id="@+id/cartButton"
-        android:layout_width="300dp"
+        android:layout_width="@dimen/three_hundred"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_margin="@dimen/twelve"
         android:background="@drawable/addtocartbtn"
         android:elevation="5dp"
         android:fontFamily="@font/cherry_cream_soda"

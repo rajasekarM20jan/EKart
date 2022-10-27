@@ -1,9 +1,11 @@
 package com.example.ekart;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -148,5 +150,25 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.mainLayout,new HomeFragment()).commit();
         btmView.setSelectedItemId(R.id.homeButton);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert=new AlertDialog.Builder(MainActivity.this);
+        alert.setMessage("Do You Want to Exit the Application?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        alert.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finishAffinity();
+            }
+        });
+        alert.show();
     }
 }

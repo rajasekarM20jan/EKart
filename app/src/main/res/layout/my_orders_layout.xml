@@ -7,21 +7,21 @@
 
     <TextView
         android:id="@+id/product"
-        android:layout_width="200dp"
+        android:layout_width="@dimen/two_hundred"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginStart="@dimen/thirty"
+        android:layout_marginTop="@dimen/thirty"
+        android:layout_marginEnd="@dimen/thirty"
+        android:layout_marginBottom="@dimen/thirty" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="200dp"
+        android:layout_width="@dimen/two_hundred"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginStart="@dimen/hundred_and_thirty"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginEnd="@dimen/thirty"
+        android:layout_marginBottom="@dimen/thirty" />
 </RelativeLayout>

@@ -10,7 +10,7 @@
     <View
         android:id="@+id/view4"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/sixty"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,8 +19,8 @@
         android:id="@+id/backInCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/four"
+        android:layout_marginStart="@dimen/twenty"
         android:backgroundTint="@color/topbar"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginTop="8dp"
+        android:layout_margin="@dimen/five"
+        android:layout_marginTop="@dimen/seven"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="@string/item_delete_text"
         android:textSize="14sp"
@@ -52,7 +52,7 @@
 
     <android.widget.Button
         android:id="@+id/proceedToBuy"
-        android:layout_width="200dp"
+        android:layout_width="@dimen/two_hundred"
         android:background="@drawable/addtocartbtn"
         android:text="@string/proceed_to_buy"
         android:textColor="@color/white"
@@ -60,11 +60,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="20dp"/>
+        android:layout_margin="@dimen/twenty"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="@dimen/five_hundred_and_fifty"
         app:layout_constraintTop_toBottomOf="@id/view4"
         app:layout_constraintBottom_toTopOf="@id/proceedToBuy">
 
@@ -72,7 +72,7 @@
             android:id="@+id/cartList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/ten"/>
 
 
     </LinearLayout>

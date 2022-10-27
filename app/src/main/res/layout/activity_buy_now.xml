@@ -9,7 +9,7 @@
     <View
         android:id="@+id/view6"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/sixty"
         android:background="@color/topbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
     <View
         android:id="@+id/view7"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/sixty"
         android:background="@color/topbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/twenty"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="@string/main_text"
         android:textColor="@color/white"
@@ -40,9 +40,9 @@
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="154dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="@dimen/hundred_and_sixty"
+        android:layout_height="@dimen/twenty_five"
+        android:layout_marginTop="@dimen/fifty"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="@string/your_products_are"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,32 +51,32 @@
 
     <TextView
         android:id="@+id/productText"
-        android:layout_width="170dp"
+        android:layout_width="@dimen/hundred_and_seventy"
         android:gravity="start"
-        android:layout_height="250dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/two_hundred_and_fifty"
+        android:layout_marginStart="@dimen/thirty"
+        android:layout_marginTop="@dimen/thirty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/productTextPrice"
-        android:layout_width="170dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/hundred_and_seventy"
+        android:layout_height="@dimen/two_hundred_and_fifty"
         android:gravity="end"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="@dimen/thirty"
+        android:layout_marginEnd="@dimen/thirty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/totalPrice"
-        android:layout_width="168dp"
+        android:layout_width="@dimen/hundred_and_eighty"
         android:gravity="end"
         android:textStyle="bold"
-        android:layout_height="22dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="30dp"
+        android:layout_height="@dimen/twenty"
+        android:layout_marginTop="@dimen/twenty_five"
+        android:layout_marginEnd="@dimen/thirty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productTextPrice" />
 
@@ -84,7 +84,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:textStyle="bold"
         android:textColor="@color/red"
         android:text="@string/as_of_now_we_are_providing_only_cash_on_delivery"
@@ -94,18 +94,18 @@
 
     <TextView
         android:id="@+id/address"
-        android:layout_width="320dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/three_hundred_and_seventeen"
+        android:layout_height="@dimen/hundred"
+        android:layout_marginTop="@dimen/twenty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <android.widget.Button
         android:id="@+id/confirmPurchase"
-        android:layout_width="130dp"
+        android:layout_width="@dimen/hundred_and_thirty"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/twenty"
         android:textColor="@color/white"
         android:background="@drawable/addtocartbtn"
         android:text="@string/confirm_purchase"
@@ -115,9 +115,9 @@
 
     <android.widget.Button
         android:id="@+id/cancelButton"
-        android:layout_width="130dp"
+        android:layout_width="@dimen/hundred_and_thirty"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/twenty"
         android:background="@drawable/addtocartbtn"
         android:text="@string/cancel"
         android:textColor="@color/white"

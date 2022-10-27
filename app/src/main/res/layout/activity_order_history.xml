@@ -16,8 +16,8 @@
         android:id="@+id/backInHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/four"
+        android:layout_marginStart="@dimen/twenty"
         android:backgroundTint="@color/topbar"
         app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,9 @@
         app:layout_constraintTop_toTopOf="@id/view8" />
 
     <LinearLayout
-        android:layout_width="369dp"
-        android:layout_height="641dp"
-        android:layout_margin="30dp"
+        android:layout_width="@dimen/three_hundred_and_seventy"
+        android:layout_height="@dimen/six_hundred_and_forty"
+        android:layout_margin="@dimen/thirty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
 
         <ListView
             android:id="@+id/orderHistoryList"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/ten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

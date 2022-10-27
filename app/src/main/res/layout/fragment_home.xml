@@ -33,9 +33,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="347dp"
-        android:layout_height="144dp"
-        android:layout_margin="10dp"
+        android:layout_width="@dimen/three_hundred_and_forty_seven"
+        android:layout_height="@dimen/hundred_and_forty_four"
+        android:layout_margin="@dimen/ten"
         android:src="@drawable/festivalsale"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="@dimen/four_hundred"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,8 +57,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="@dimen/twenty"
+                android:layout_marginBottom="@dimen/ten"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:text="@string/recommended_for_you"
@@ -69,8 +69,8 @@
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="@dimen/two_hundred"
+                android:layout_marginTop="@dimen/forty"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -87,9 +87,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/iphoneX"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -107,9 +107,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/macBook"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -127,9 +127,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/huawei"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -147,9 +147,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/surfaceBook"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -167,9 +167,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/oppoF19"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -188,7 +188,7 @@
                 style="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/twenty_five"
                 android:fontFamily="@font/cherry_cream_soda"
                 android:gravity="center"
                 android:text="@string/our_products"
@@ -197,8 +197,8 @@
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="@dimen/two_hundred"
+                android:layout_marginTop="@dimen/forty"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -215,9 +215,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/iphone9"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -235,9 +235,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/brownPerfume"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -255,9 +255,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/treeOil"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -275,9 +275,9 @@
 
                         <android.widget.ImageView
                             android:id="@+id/keyHolder"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:gravity="bottom" />
 
                         <TextView
@@ -295,9 +295,9 @@
 
                         <android.widget.Button
                             android:id="@+id/listButton"
-                            android:layout_width="80dp"
-                            android:layout_height="140dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="@dimen/eighty"
+                            android:layout_height="@dimen/hundred_and_forty"
+                            android:layout_margin="@dimen/ten"
                             android:background="@drawable/viewall"
                             android:drawableRight="@drawable/arrow"
                             android:gravity="center"
