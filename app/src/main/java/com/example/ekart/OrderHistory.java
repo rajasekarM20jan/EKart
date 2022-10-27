@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,6 +21,7 @@ import model.OrderModel;
 
 public class OrderHistory extends AppCompatActivity {
     ArrayList orderData;
+    FloatingActionButton back;
     ArrayList<OrderModel> orders;
     ListView myOrders;
 
@@ -25,6 +29,7 @@ public class OrderHistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_history);
+        back=findViewById(R.id.backInHistory);
         DbForUser db=new DbForUser(OrderHistory.this);
         myOrders=findViewById(R.id.orderHistoryList);
         SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
@@ -43,6 +48,14 @@ public class OrderHistory extends AppCompatActivity {
         }
         MyOrderAdapter la=new MyOrderAdapter(OrderHistory.this,R.layout.my_orders_layout,orders);
         myOrders.setAdapter(la);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(OrderHistory.this,UserProfile.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,11 +26,13 @@ public class ProductViewer extends AppCompatActivity {
     Object[] url1;
     DbForProducts db;
     Button addToCart;
+    FloatingActionButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_viewer);
+        back=findViewById(R.id.backInPV);
         productImage=findViewById(R.id.productImage);
         productName=findViewById(R.id.productName);
         productPrice=findViewById(R.id.productPrice);
@@ -107,5 +111,18 @@ public class ProductViewer extends AppCompatActivity {
 
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(ProductViewer.this,ListActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(ProductViewer.this,ListActivity.class);
+        startActivity(i);
     }
 }

@@ -10,19 +10,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import controller.controllerLogin;
 
 public class Login extends AppCompatActivity {
     EditText etForMail,etForPassword;
     Button loginButton;
     TextView linkForSignUp;
+    FloatingActionButton back;
     DbForUser db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        back=findViewById(R.id.backInLogin);
         etForMail=findViewById(R.id.etForMail);
         etForPassword=findViewById(R.id.etForPassword);
         loginButton=findViewById(R.id.loginButton);
@@ -45,8 +48,22 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a=new Intent(Login.this,MainActivity.class);
+                startActivity(a);
+            }
+        });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent a=new Intent(Login.this,MainActivity.class);
+        startActivity(a);
+    }
+
     void gettoSignUp(){
         Intent i=new Intent(this,Register.class);
         startActivity(i);

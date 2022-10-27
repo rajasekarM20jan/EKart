@@ -11,11 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class BuyingPage extends AppCompatActivity {
     EditText etForDoor,etForStreet,etForCity,etForState,etForPin,etForLandmark;
     Button next;
+    FloatingActionButton back;
     String door,street,city,state,pin,landmark;
     ArrayList products;
     @Override
@@ -29,6 +32,7 @@ public class BuyingPage extends AppCompatActivity {
         etForPin=findViewById(R.id.etForPin);
         etForLandmark=findViewById(R.id.etForLandMark);
         next=findViewById(R.id.nextInBuy);
+        back=findViewById(R.id.backInBuyingPage);
         Intent i=getIntent();
         products=i.getStringArrayListExtra("products");
 
@@ -39,6 +43,13 @@ public class BuyingPage extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cart=new Intent(BuyingPage.this,Cart.class);
+                startActivity(cart);
+            }
+        });
 
     }
     void getConfirmation(){
@@ -125,5 +136,11 @@ public class BuyingPage extends AppCompatActivity {
         ai.putExtra("products",products);
         ai.putExtra("address",address);
         startActivity(ai);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent cart=new Intent(BuyingPage.this,Cart.class);
+        startActivity(cart);
     }
 }

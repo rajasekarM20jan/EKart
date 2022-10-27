@@ -1,7 +1,9 @@
 package com.example.ekart;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -69,6 +71,33 @@ public class BuyNow extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert=new AlertDialog.Builder(BuyNow.this);
+                alert.setMessage("Are You Sure to Cancel the purchase");
+                alert.setCancelable(false);
+                alert.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                alert.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent ai=new Intent(BuyNow.this,Cart.class);
+                        startActivity(ai);
+                    }
+                });
+                alert.show();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
 
     }
 }

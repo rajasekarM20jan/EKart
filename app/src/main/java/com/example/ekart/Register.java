@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Register extends AppCompatActivity {
     EditText signUpName,userName,mailId,mobile,signupPassword,confirmPassword;
     Button registerButton;
+    FloatingActionButton back;
     TextView linkForSignIn;
     int result;
     DbForUser dbForUser;
@@ -22,6 +25,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        back=findViewById(R.id.backInRegister);
         signUpName=findViewById(R.id.signupName);
         userName=findViewById(R.id.userName);
         mailId=findViewById(R.id.mailId);
@@ -38,6 +42,12 @@ public class Register extends AppCompatActivity {
             }
         });
         linkForSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getLogin();
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getLogin();
@@ -161,6 +171,12 @@ public class Register extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        getLogin();
+    }
+
     void getLogin(){
         Intent i=new Intent(Register.this,Login.class);
         startActivity(i);

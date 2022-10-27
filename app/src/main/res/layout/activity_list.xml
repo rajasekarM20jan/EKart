@@ -14,6 +14,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backInList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/topbar"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,8 +76,8 @@
         android:id="@+id/filterLayout"
         android:layout_width="300dp"
         android:layout_height="480dp"
-
         android:background="@drawable/addtocartbtn"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +108,11 @@
                 android:layout_height="wrap_content">
                 <RadioButton
                     android:id="@+id/smartPhonesFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:text="@string/mobiles"
                     android:textSize="13sp"
@@ -106,9 +120,11 @@
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/laptopsFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/laptops"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="13sp"
@@ -116,9 +132,11 @@
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/fragrancesFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/fragrances"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="13sp"
@@ -126,9 +144,11 @@
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/skincareFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/skincare"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="13sp"
@@ -136,9 +156,11 @@
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/groceriesFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/groceries"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="13sp"
@@ -146,19 +168,23 @@
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/decorsFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/home_decors"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:gravity="center"
                     android:fontFamily="@font/cherry_cream_soda"/>
                 <RadioButton
                     android:id="@+id/allFilter"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/view_all"
+                    android:buttonTint="@color/white"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="13sp"

@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 import model.CartModel;
@@ -21,13 +23,14 @@ public class Cart extends AppCompatActivity {
     String title,thumbnail,price;
     ArrayList cartData;
     ListView cartList;
+    FloatingActionButton back;
     Button proceedToBuy;
     ArrayList<CartModel> myArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-
+        back=findViewById(R.id.backInCart);
         cartList=findViewById(R.id.cartList);
         proceedToBuy=findViewById(R.id.proceedToBuy);
         cartData=new ArrayList<>();
@@ -75,6 +78,13 @@ public class Cart extends AppCompatActivity {
                 }else{
                     getBuyPage();
                 }
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a=new Intent(Cart.this,MainActivity.class);
+                startActivity(a);
             }
         });
 

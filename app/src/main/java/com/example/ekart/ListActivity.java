@@ -28,7 +28,7 @@ public class ListActivity extends AppCompatActivity {
     ArrayList<ProductModel> myFilter;
     DbForProducts db;
     String values="all";
-    FloatingActionButton filter;
+    FloatingActionButton filter,back;
     ConstraintLayout filterLayout;
     RadioGroup radioGroupFilter;
     RadioButton smartPhonesFilter,laptopsFilter,fragrancesFilter,skincareFilter,groceriesFilter,home_decorationFilter,viewAll;
@@ -38,6 +38,7 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         mySearch=findViewById(R.id.mySearch);
         myList=findViewById(R.id.productList);
+        back=findViewById(R.id.backInList);
         filter=findViewById(R.id.filterNavigator);
         filterLayout=findViewById(R.id.filterLayout);
         radioGroupFilter=findViewById(R.id.radioGroupFilter);
@@ -194,9 +195,20 @@ public class ListActivity extends AppCompatActivity {
                     }
                 });
 
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent a=new Intent(ListActivity.this,MainActivity.class);
+                        startActivity(a);
+                    }
+                });
+
 
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        Intent a=new Intent(ListActivity.this,MainActivity.class);
+        startActivity(a);
+    }
 }
