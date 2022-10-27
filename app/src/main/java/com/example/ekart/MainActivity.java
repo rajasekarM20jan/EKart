@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         btmView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -108,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+
                         try {
                             JSONObject obj=new JSONObject(resultData);
                             JSONArray arr=obj.getJSONArray("products");
@@ -132,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            System.out.println("Frag is null");
                         }
 
 

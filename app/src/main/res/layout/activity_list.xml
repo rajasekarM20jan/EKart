@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_text"
+        android:textColor="@color/white"
         android:fontFamily="@font/cherry_cream_soda"
         android:textSize="20sp"
         android:gravity="center"
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             />
+
         <ListView
             android:id="@+id/productList"
             android:layout_width="match_parent"
@@ -46,5 +48,131 @@
             />
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/filterNavigator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/topbar"
+        android:src="@drawable/filter"
+        app:tint="@color/white"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="300dp"
+        android:layout_height="480dp"
+
+        android:background="@drawable/addtocartbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/list"
+                android:textColor="@color/topbar"
+                android:textSize="16sp"
+                android:text="@string/filters"
+                android:fontFamily="@font/cherry_cream_soda"
+                android:gravity="center"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupFilter"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/smartPhonesFilter"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mobiles"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/laptopsFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/laptops"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/fragrancesFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fragrances"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/skincareFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skincare"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/groceriesFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groceries"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/decorsFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_decors"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+                <RadioButton
+                    android:id="@+id/allFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cherry_cream_soda"/>
+            </RadioGroup>
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

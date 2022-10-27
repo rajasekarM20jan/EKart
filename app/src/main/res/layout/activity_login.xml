@@ -7,19 +7,26 @@
     android:layout_height="match_parent"
     android:id="@+id/loginLayout"
     tools:context=".Login">
-
-    <TextView
+    <View
+        android:id="@+id/lView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="30dp"
-        android:text="@string/main_text"
-        android:textSize="20sp"
-        android:gravity="center"
+        android:background="@color/topbar"/>
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/cherry_cream_soda"
-        />
+        android:text="@string/main_text"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/lView"
+        app:layout_constraintEnd_toEndOf="@id/lView"
+        app:layout_constraintStart_toStartOf="@id/lView"
+        app:layout_constraintTop_toTopOf="@id/lView" />
+
+
 
     <LinearLayout
         android:layout_width="317dp"

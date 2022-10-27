@@ -3,15 +3,15 @@ package model;
 import java.util.ArrayList;
 
 public class OrderModel {
-    ArrayList products;
+    String products;
     String orderDate;
 
-    public OrderModel(ArrayList products, String orderDate) {
+    public OrderModel(String products, String orderDate) {
         this.products = products;
         this.orderDate = orderDate;
     }
 
-    public ArrayList getProducts() {
+    public String getProducts() {
         return products;
     }
 

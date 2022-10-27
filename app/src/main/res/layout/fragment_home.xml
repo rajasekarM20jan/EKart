@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="@string/main_text"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintEnd_toEndOf="@id/view"

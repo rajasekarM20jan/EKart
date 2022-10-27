@@ -32,6 +32,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="@string/main_text"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/view6"
         app:layout_constraintStart_toStartOf="@+id/view6"
@@ -105,6 +106,7 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
+        android:textColor="@color/white"
         android:background="@drawable/addtocartbtn"
         android:text="@string/confirm_purchase"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,6 +120,7 @@
         android:layout_marginStart="20dp"
         android:background="@drawable/addtocartbtn"
         android:text="@string/cancel"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="@+id/view7" />

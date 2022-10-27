@@ -61,7 +61,10 @@ public class BuyNow extends AppCompatActivity {
                 System.out.println("MY PRODUCTS: "+product);
                 DbForUser db=new DbForUser(BuyNow.this);
                 db.deleteCart();
-                db.insertOrders(mobile, String.valueOf(products),OrderDate);
+                for(int i=0;i<products.size();i++){
+                    db.insertOrders(mobile, String.valueOf(products.get(i)),OrderDate);
+                }
+
                 Intent i=new Intent(BuyNow.this,ThankYouPage.class);
                 startActivity(i);
             }

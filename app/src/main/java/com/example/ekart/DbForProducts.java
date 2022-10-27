@@ -13,8 +13,9 @@ import java.util.ArrayList;
 public class DbForProducts extends SQLiteOpenHelper {
     SQLiteDatabase dbReader,dbWriter;
     ContentValues values;
-    Cursor c;
+    Cursor c,d;
     int count;
+    String data;
     ArrayList image;
     String id,title,description,price,discountPercentage,rating,stock,brand,category,thumbnail;;
 
@@ -40,6 +41,8 @@ public class DbForProducts extends SQLiteOpenHelper {
         c=dbReader.rawQuery("SELECT id FROM products",null);
         count=c.getCount();
     }
+
+
 
     void insert(String id,String title,String description,String price,String discountPercentage,String rating,String stock,String brand,String category,String thumbnail){
         try{
@@ -110,6 +113,8 @@ public class DbForProducts extends SQLiteOpenHelper {
         thumbnail=c.getString(9);
 
     }
+
+
     void getList(String id){
         dbReader=this.getReadableDatabase();
         c=dbReader.rawQuery("SELECT * FROM products WHERE id=?",new String[]{id});
@@ -124,6 +129,5 @@ public class DbForProducts extends SQLiteOpenHelper {
         brand=c.getString(7);
         category=c.getString(8);
         thumbnail=c.getString(9);
-
     }
 }

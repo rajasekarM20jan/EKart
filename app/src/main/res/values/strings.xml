@@ -43,7 +43,6 @@
     <string name="brand">Brand :</string>
     <string name="category">Category :</string>
     <string name="add_to_cart">ADD TO CART</string>
-    <string name="delete">DELETE</string>
     <string name="proceed_to_buy">PROCEED TO BUY</string>
     <string name="my_cart">My Cart</string>
     <string name="item_delete_text">click on item to delete it from cart...</string>
@@ -79,4 +78,7 @@
     <string name="order_success">YOUR ORDER HAS BEEN PLACED SUCCESSFULLY</string>
     <string name="thank_you_txt">You Can View Your Order Details under User Profile</string>
     <string name="order_history">ORDER HISTORY</string>
+    <string name="next">NEXT</string>
+    <string name="filters">FILTERS</string>
+    <string name="apply">APPLY</string>
 </resources>
