@@ -114,15 +114,11 @@ public class ProductViewer extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(ProductViewer.this,ListActivity.class);
+                Intent i=new Intent(ProductViewer.this,MainActivity.class);
                 startActivity(i);
             }
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent i=new Intent(ProductViewer.this,ListActivity.class);
-        startActivity(i);
-    }
+
 }

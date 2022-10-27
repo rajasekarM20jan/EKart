@@ -15,6 +15,7 @@ public class ThankYouPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank_you_page);
+        back=findViewById(R.id.backInThankYou);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
