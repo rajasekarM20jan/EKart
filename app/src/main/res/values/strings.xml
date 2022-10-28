@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EKart</string>
     <string name="main_text">E-KART</string>
     <string name="recommended_for_you">Recommended For You…</string>
@@ -45,7 +45,7 @@
     <string name="add_to_cart">ADD TO CART</string>
     <string name="proceed_to_buy">PROCEED TO BUY</string>
     <string name="my_cart">My Cart</string>
-    <string name="item_delete_text">click on item to delete it from cart...</string>
+    <string name="item_delete_text">click on item to delete it from cart…</string>
     <string name="enter_address">Enter Your Address for Delivery Purpose</string>
     <string name="door_flat_no">Door/Flat No.</string>
     <string name="street">Street</string>
@@ -59,7 +59,7 @@
     <string name="your_door_no">your door no..</string>
     <string name="your_street">your street..</string>
     <string name="your_near_by_landmark">your near by LandMark..</string>
-    <string name="landmark_alert">Please give us some Landmark so we could reach you at ease...</string>
+    <string name="landmark_alert">Please give us some Landmark so we could reach you at ease…</string>
     <string name="pin_alert">Please enter the valid Postal Code</string>
     <string name="state_alert">Please fill in the field State</string>
     <string name="city_alert">Please fill in the field City</string>
@@ -71,7 +71,7 @@
     <string name="login_alert_pv">Please Login Before Adding to Cart</string>
     <string name="login_alert_cart">Login Before You Proceed to Buy</string>
     <string name="confirm_purchase">Confirm Purchase</string>
-    <string name="cancel">CANCEL</string>
+    <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
     <string name="as_of_now_we_are_providing_only_cash_on_delivery">*As Of Now We Are providing Only Cash On Delivery</string>
     <string name="your_products_are">Your Products are :</string>
     <string name="address_of_delivery">Address Of Delivery:\n</string>
