@@ -16,7 +16,7 @@ public class DbForUser extends SQLiteOpenHelper {
     ContentValues values;
     Cursor c;
     String userFound;
-    ArrayList cart,orderHistory;
+    ArrayList cart,orderHistory,savedAddress;
 
     public DbForUser(@Nullable Context context) {
         super(context, "UserDatabase", null, 1);
@@ -146,6 +146,27 @@ public class DbForUser extends SQLiteOpenHelper {
             myArray.add(c.getString(2));
 
             orderHistory.add(myArray);
+        }
+    }
+
+    public void insertAddress(String mobile,String address){
+        dbWriter=this.getWritableDatabase();
+        values=new ContentValues();
+        values.put("mobileNumber",mobile);
+        values.put("address",address);
+        dbWriter.insert("userAddress",null,values);
+    }
+
+    public void getAddress(String mobile){
+        dbReader=this.getReadableDatabase();
+        savedAddress=new ArrayList<>();
+        c=dbReader.rawQuery("SELECT * FROM userAddress WHERE mobileNumber=?",new String[]{mobile});
+        while (c.moveToNext()){
+            ArrayList myAddress=new ArrayList<>();
+            myAddress.add(c.getString(0));
+            myAddress.add(c.getString(1));
+
+            savedAddress.add(myAddress);
         }
     }
 }

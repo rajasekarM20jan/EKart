@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class BuyingPage extends AppCompatActivity {
     EditText etForDoor,etForStreet,etForCity,etForState,etForPin,etForLandmark;
-    Button next;
+    Button next,savedAddress;
     FloatingActionButton back;
     String door,street,city,state,pin,landmark;
     ArrayList products;
@@ -31,6 +32,7 @@ public class BuyingPage extends AppCompatActivity {
         etForState=findViewById(R.id.etForState);
         etForPin=findViewById(R.id.etForPin);
         etForLandmark=findViewById(R.id.etForLandMark);
+        savedAddress=findViewById(R.id.addressListButton);
         next=findViewById(R.id.nextInBuy);
         back=findViewById(R.id.backInBuyingPage);
         Intent i=getIntent();
@@ -48,6 +50,14 @@ public class BuyingPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent cart=new Intent(BuyingPage.this,Cart.class);
                 startActivity(cart);
+            }
+        });
+        savedAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent address=new Intent(BuyingPage.this,SavedAddress.class);
+                address.putExtra("products",products);
+                startActivity(address);
             }
         });
 
@@ -132,6 +142,11 @@ public class BuyingPage extends AppCompatActivity {
     void nextPage(){
         System.out.println("My Address: "+door+", "+street+", "+city+", "+state+", "+pin+". Near "+landmark);
         String address=(door+", "+street+", "+city+", \n"+state+", "+pin+". \nLandMark: "+landmark);
+        SharedPreferences sp=getSharedPreferences("MyPref",MODE_PRIVATE);
+        String mobile=sp.getString("mobile","no");
+
+        DbForUser db=new DbForUser(BuyingPage.this);
+        db.insertAddress(mobile,address);
         Intent ai=new Intent(BuyingPage.this,BuyNow.class);
         ai.putExtra("products",products);
         ai.putExtra("address",address);

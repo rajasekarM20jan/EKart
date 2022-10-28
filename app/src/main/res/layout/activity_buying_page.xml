@@ -8,16 +8,15 @@
     tools:context=".BuyingPage">
 
 
-
     <View
         android:id="@+id/view5"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/sixty"
         android:background="@color/topbar"
         android:layerType="hardware"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backInBuyingPage"
@@ -205,12 +204,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             />
 
+    <android.widget.Button
+        android:id="@+id/addressListButton"
+        android:textColor="@color/white"
+        android:layout_width="@dimen/eighty"
+        android:layout_height="@dimen/forty"
+        android:layout_marginTop="@dimen/six"
+        android:layout_marginEnd="@dimen/twenty"
+        android:layout_marginBottom="@dimen/six"
+        android:text="@string/saved_address"
+        android:background="@color/topbar"
 
-
-
-
-
-
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5"
+        tools:ignore="SmallSp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

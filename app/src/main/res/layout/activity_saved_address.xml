@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SavedAddress">
+
+    <View
+        android:id="@+id/view21"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sixty"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/topbar"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backInSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/four"
+        android:layout_marginStart="@dimen/twenty"
+        android:backgroundTint="@color/topbar"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_cart"
+        android:textColor="@color/white"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/view21"
+        app:layout_constraintBottom_toBottomOf="@id/view21"
+        app:layout_constraintStart_toStartOf="@id/view21"
+        app:layout_constraintEnd_toEndOf="@id/view21"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_hundred_and_fifty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view21">
+
+        <ListView
+            android:id="@+id/addressList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/twenty"
+        android:fontFamily="@font/cherry_cream_soda"
+        android:textSize="18sp"
+        android:text="@string/saved_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view21" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
